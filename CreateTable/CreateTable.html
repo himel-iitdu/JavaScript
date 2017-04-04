@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Create Table</title>
+</head>
+<body>
+    <div class="set-form">
+        <table id="myTable" class="table table-bordered">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+            <tr>
+                <td>
+                    <textarea placeholder="Name" ></textarea>
+                </td>
+                <td>
+                    <textarea placeholder="Email" ></textarea>
+                </td>
+            </tr>
+        </table>
+
+        <input type="button" onclick="add_row();" value="Add New Row" class="btn btn-info" />
+
+        </div>
+
+        <script type="text/javascript">
+        function add_row() {
+            document.getElementById("myTable").insertRow(-1).innerHTML =
+            '<tr> <td><textarea placeholder="Name"></textarea></td> <td><textarea placeholder ="Email"></textarea></td> </tr>';
+        }
+        </script>
+
+    </body>
+    </html>

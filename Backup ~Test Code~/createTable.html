@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Create Table Using Simple HTML-JavaScript</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+    function showForm() {
+        if (document.getElementById("info").style.display == "none") {
+            document.getElementById("info").style.display="block";
+            document.getElementById("submit_button").style.display = "block";
+            document.getElementById("button_id").firstChild.data = "Cancel";
+        } else {
+            document.getElementById("info").style.display="none";
+            document.getElementById("button_id").firstChild.data = "Insert";
+            document.getElementById("submit_button").style.display = "none";
+        }
+    }
+
+    function AddRow() {
+        var theader = '<table border="1">\n';
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var tbody = '<tr>' + '<td>' + name + '</td>' + '<td>' + email + '</td>' +'</tr>\n';
+        var tfooter = '</table>';
+        document.getElementById('wrapper').innerHTML = theader + tbody + tfooter;
+        document.getElementById("info").style.display="none";
+        document.getElementById("button_id").firstChild.data = "Insert";
+        document.getElementById("submit_button").style.display = "none";
+    }
+    </script>
+
+    <div id="wrapper"></div>
+    <button id="button_id" onclick="showForm()">Insert</button>
+
+    <form name="data" id="info" action="" method="post" hidden="true">
+        <br>
+        <input id="name" type="text" name="name" > <br><br>
+        <input id="email" type="text" name="email" >
+    </form>
+
+    <button id="submit_button" hidden="true" onclick="AddRow()">Add Row</button>
+
+
+</body>
+</html>
